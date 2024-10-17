@@ -15,11 +15,13 @@ function ApiCallComponenet() {
   async function ApiCall() {
     setLoading(true);
     try {
-      const fecthData = await fetch("https://fakestoreapi.com/products");
+      const fecthData = await fetch("https://fakestoreapi.com/products", {});
       const getData = await fecthData.json();
       setApiData(getData);
       setLoading(false);
-    } catch {}
+    } finally {
+      setLoading(false);
+    }
   }
   return (
     <>

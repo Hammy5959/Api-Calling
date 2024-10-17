@@ -3,7 +3,12 @@
 import { useState } from "react";
 
 export default function Home() {
-  const [todo, setTodos] = useState([]);
+  const [todo, setTodos] = useState([
+    {
+      id: null,
+      todo: "",
+    },
+  ]);
 
   async function apiCall() {
     const res = await fetch("https://dummyjson.com/todos");
